@@ -22,8 +22,16 @@ void init() {
 }
 int main() {
     init();
-    for (int i = 1; i <= prime[0]; i++) {
-        printf("%d\n", prime[i]);
+    int f_max = 0, n = 1;
+    while (1) {
+        if (n & 1) {
+            f_max = f[n] * f[(n + 1) >> 1];
+        } else {
+            f_max = f[n >> 1] * f[n + 1];
+        }
+        if (f_max > 500) break;
+        n += 1;
     }
+    printf("%d\n", n * (n + 1) / 2);
     return 0;
 }
