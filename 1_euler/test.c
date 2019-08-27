@@ -6,4 +6,11 @@
  ************************************************************************/
 
 #include<stdio.h>
+#include <math.h>
 
+int main() {
+    double m = 1.5;
+    double n = 4000000;
+    int res = log
+    return 0;
+}
