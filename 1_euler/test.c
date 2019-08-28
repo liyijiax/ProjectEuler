@@ -9,8 +9,11 @@
 #include <math.h>
 
 int main() {
-    double m = 1.5;
-    double n = 4000000;
-    int res = log
+    double x;
+    int fac = 1;
+    for (int i = 1; i < 10; i++) {
+        fac *= i;
+    }
+    printf("%d\n", fac);
     return 0;
 }
