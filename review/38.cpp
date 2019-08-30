@@ -23,10 +23,11 @@ int combine(int x, int i) {
 int is_flag[10];
 
 int add_num(int x, int i) {
-    while (x) {
-        if (is_flag[x % 10]) return 0;
-        is_flag[x % 10] = 1;
-        x /= 10;
+    int p = x * i;
+    while (p) {
+        if (is_flag[p % 10]) return 0;
+        is_flag[p % 10] = 1;
+        p /= 10;
     }
     return 1;
 }
@@ -43,20 +44,20 @@ int is_val(int x) {
     while (flag && num < 9) {
         flag = flag && add_num(x, i);
         num += digits(i * x);
+        // cout << num << " : " << i * x << " : " << i << endl;
         i++;
     }
     if (!flag || num > 9) return 0;
-    return combine(x, i);
+    return combine(x, i - 1);
 }
 
 int main() {
     int max = 0;
-    /*for (int i = 1; i < max_n; i++) {
+    for (int i = 1; i < max_n; i++) {
         if (!is_val(i)) continue;
         int p = is_val(i);
         if (p > max) max = p;
-    }*/
-    cout << is_val(9) << endl;
-    //cout << max << endl;
+    }
+    cout << max << endl;
     return 0;
 }
