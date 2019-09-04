@@ -146,3 +146,7 @@ if (ans % j == 0) ans /= j, j++; // 只能这么写
 ### 照打的
 
 > 22
+
+### Euler - 29
+
+> memcmp memcpy
