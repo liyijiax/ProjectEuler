@@ -25,6 +25,7 @@ int find(int p) {
                 cnt++;
                 int x = p / (a + b + c);
                 cout << "i " << i << " " << "j " << j << endl;
+                cout << "a " << a << " " << "b " << b << " x " << x <<endl;
                 cout << x * a << " " << x * b << " " << x * c << endl;
             }
         }
