@@ -24,19 +24,14 @@ void init() {
 
 int main() {
     init();
-    int p;
-    for (int i = 1; i < max_n; i++) {
-        if (cnt[i] == 4){ 
-            if (cnt[i + 1] == 4) { 
-                if (cnt[i + 2] == 4) { 
-                    if (cnt[i + 3] == 4) {
-                        p = i;
-                        break;
-                    }
-                }
-            }
+    int i;
+    for (i = 1; i < max_n; i++) {
+        int flag = 1;
+        for (int k = 0; k < 4 && flag; k++) {
+            flag = (cnt[i + k] == 4);
         }
+        if (flag) break;
     }
-    cout << p << endl;
+    cout << i << endl;
     return 0;
 }
